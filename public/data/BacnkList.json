@@ -1,0 +1,44 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Сбербанк",
+      "Credit": false
+    },
+    {
+      "id": 2,
+      "name": "ВТБ",
+      "Credit": false
+    },
+    {
+      "id": 3,
+      "name": "Газпромбанк",
+      "Credit": false
+    },
+    {
+      "id": 4,
+      "name": "Альфа-Банк",
+      "Credit": false
+    },
+    {
+      "id": 5,
+      "name": "T-Банк (Тинькофф)",
+      "Credit": false
+    },
+    {
+      "id": 6,
+      "name": "Совкомбанк",
+      "Credit": false
+    },
+    {
+      "id": 7,
+      "name": "Озон Банк",
+      "Credit": false
+    },
+    {
+      "id": 8,
+      "name": "Яндекс Банк",
+      "Credit": false
+    }
+  ]
+}

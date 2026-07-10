@@ -1,0 +1,61 @@
+.button_add{
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-size: 1vw;
+  font-weight: 500;
+  color: white;
+  border: none;
+  border-radius: 0.25vw;
+  cursor: pointer;
+
+}
+
+.add_item{
+  width:100%;
+  background-color: #e3e3e3;
+  height: fit-content;
+  padding: 0.5vw;
+  border-radius: 0.25vw;
+  gap: 0.25vw;
+  display: flex;
+  flex-direction: column;
+
+  & > .title{
+    text-align: center;
+  }
+
+  & > .item_info{
+    display: flex;
+    flex-direction: row;
+    gap: 0.25vw;
+
+    & > span {
+      font-size: 0.85vw;
+      text-wrap: nowrap;
+    }
+
+    & > input{
+      font-size: 0.85vw;
+      border-radius: 0.25vw;
+      border: none;
+      padding: 0.1vw;
+      width: 100%;
+    }
+
+    & > input:focus-visible{
+      border: none;
+      outline: #764ba2 solid 1px;
+    }
+  }
+
+  & > .add_localStorage{
+    background-color: #8f50d3;
+    font-size: 0.85vw;
+    font-weight: 600;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.25vw;
+    cursor: pointer;
+    padding: 0.25vw;
+  }
+}
