@@ -18,15 +18,16 @@ const MainPage = () => {
 
             <div className={"body"}>
 
+                <DebitList
+                    id="debitList"
+                    item={ BunckList }
+                />
+
                 <CreditList
                     id="creditList"
                     item={ BunckList }
                 />
 
-                <DebitList
-                    id="debitList"
-                    item={ BunckList }
-                />
 
             </div>
 
