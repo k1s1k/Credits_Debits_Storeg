@@ -1,0 +1,99 @@
+.edit-item{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(202, 202, 202, 0.2);
+  width:100%;
+  height: fit-content;
+  padding: 0.5vw;
+  border-radius: 0.5vw;
+  gap: 0.25vw;
+  border: 1px solid rgba(114, 97, 143, 0.33);
+
+  & > .view-mode{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & > .info{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      & > .info_money{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    & > .actions{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1vw;
+
+      & > button {
+        width: 100%;
+        border: none;
+        padding: 0.25vw;
+        border-radius: 0.25vw;
+        margin-top: 0.5vw;
+        cursor: pointer;
+      }
+
+      & > .edit_btn{
+        background-color: #EFE2C0;
+        color: #E2AD23;
+      }
+
+      & > .delete_btn{
+        background-color: #FFDBDB ;
+        color: #FF7272;
+      }
+    }
+  }
+
+
+  & > .edit-mode{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25vw;
+
+    & > input, select{
+      font-size: 0.85vw;
+      border-radius: 0.25vw;
+      border: none;
+      padding: 0.1vw;
+      width: 100%;
+    }
+
+    & > input:focus-visible{
+      border: none;
+      outline: #764ba2 solid 1px;
+    }
+
+    & > .actions{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1vw;
+
+      & > button {
+        width: 100%;
+        border: none;
+        padding: 0.25vw;
+        border-radius: 0.25vw;
+        margin-top: 0.5vw;
+        cursor: pointer;
+      }
+
+      & > .save{
+        background-color: #D0F1CF ;
+        color: #46C73F;
+      }
+
+      & > .cansel{
+        background-color: #FFDBDB ;
+        color: #FF7272;
+      }
+    }
+  }
+}

@@ -5,17 +5,17 @@
   font-weight: 500;
   color: white;
   border: none;
-  border-radius: 0.25vw;
+  border-radius: 0.5vw;
   cursor: pointer;
-
+  padding: 0.25vw;
 }
 
-.add_item{
+.add_item , .wrapper_date{
   width:100%;
-  background-color: #e3e3e3;
+  background-color: rgba(114, 97, 143, 0.33);
   height: fit-content;
   padding: 0.5vw;
-  border-radius: 0.25vw;
+  border-radius: 0.5vw;
   gap: 0.25vw;
   display: flex;
   flex-direction: column;
@@ -28,13 +28,14 @@
     display: flex;
     flex-direction: row;
     gap: 0.25vw;
+    width: 100%;
 
     & > span {
       font-size: 0.85vw;
       text-wrap: nowrap;
     }
 
-    & > input{
+    & > input, select{
       font-size: 0.85vw;
       border-radius: 0.25vw;
       border: none;
@@ -46,6 +47,13 @@
       border: none;
       outline: #764ba2 solid 1px;
     }
+  }
+
+  & > .wrapper_date {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
   }
 
   & > .add_localStorage{
