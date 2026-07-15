@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { updateCredit, deleteCredit } from '../../features/localStorage/creditStorage.jsx';
 import { formatDate } from '../../utils/dateUtils.jsx';
 
-import "./EditItemCreditStyles.scss"
+import "../shared/EditItemCreditStyles.scss"
 
 const EditItemCredit = ({ item, onUpdate }) => {
     const [isEditing, setIsEditing] = useState(false);
@@ -93,27 +93,27 @@ const EditItemCredit = ({ item, onUpdate }) => {
                         </div>
 
                         <div className="info_money">
-                            <div style={{ color: '#2e7d32', fontWeight: 'bold' }}>
-                                Заработано сегодня: {currentProfit.toFixed(2)} ₽
+                            <div className="profit-today">
+                                💰 Заработано сегодня: {currentProfit.toFixed(2)} ₽
                             </div>
-                            <div style={{ color: '#1565c0', fontWeight: 'bold' }}>
-                                Заработано за месяц: {monthProfit.toFixed(2)} ₽
+                            <div className="profit-month">
+                                📈 Заработано за месяц: {monthProfit.toFixed(2)} ₽
                             </div>
-                            <div style={{ color: '#1a237e', fontWeight: 'bold' }}>
-                                Сумма на конец месяца: {totalMonthEnd.toFixed(2)} ₽
+                            <div className="profit-total">
+                                📊 Сумма на конец месяца: {totalMonthEnd.toFixed(2)} ₽
                             </div>
-                            <div style={{ color: '#4a148c', fontWeight: 'bold' }}>
-                                Итого с процентами (на сегодня): {(item.money + currentProfit).toFixed(2)} ₽
+                            <div className="profit-final">
+                                🏦 Итого с процентами (на сегодня): {(item.money + currentProfit).toFixed(2)} ₽
                             </div>
                         </div>
                     </div>
 
                     <div className="actions">
                         <button className="edit_btn" onClick={() => setIsEditing(true)}>
-                            Редактировать
+                            ✏️ Редактировать
                         </button>
                         <button className="delete_btn" onClick={handleDelete}>
-                            Удалить
+                            🗑️ Удалить
                         </button>
                     </div>
                 </div>

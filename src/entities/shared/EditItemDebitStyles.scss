@@ -1,0 +1,159 @@
+.edit-item-debit {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.25vw;
+  padding: 0.6vw 0.8vw;
+  background: #3d2b21;
+  border-radius: 0.5vw;
+  border: 1px solid #5c4334;
+  width: 100%;
+  transition: all 0.3s;
+
+  &:hover {
+    border-color: #7a5a44;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  & > .view-mode {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5vw;
+
+    & > .info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15vw;
+      font-size: 0.85vw;
+      color: #d4b8a0;
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15vw;
+
+        strong {
+          color: #f5e6d3;
+        }
+
+        .interest-free-end {
+          color: #ff8a80; // ярко-красный
+          font-weight: 600;
+          margin-top: 0.15vw;
+          padding-top: 0.15vw;
+          border-top: 1px dashed #5c4334;
+          text-shadow: 0 0 20px rgba(255, 138, 128, 0.2);
+        }
+      }
+    }
+
+    & > .actions {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 1vw;
+
+      & > button {
+        width: 100%;
+        border: 1px solid #5c4334;
+        cursor: pointer;
+        padding: 0.3vw;
+        border-radius: 0.25vw;
+        transition: all 0.3s;
+        font-weight: 600;
+        font-size: 0.8vw;
+        background: #4d372b;
+        color: #f5e6d3;
+
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+
+      & > .edit_btn {
+        background: linear-gradient(135deg, #c9a050 0%, #a8843a 100%);
+        color: #1a1410;
+        border-color: #c9a050;
+
+        &:hover {
+          background: linear-gradient(135deg, #dbb86a 0%, #c9a050 100%);
+          box-shadow: 0 0 20px rgba(201, 160, 80, 0.3);
+        }
+      }
+
+      & > .delete_btn {
+        background: linear-gradient(135deg, #d97a6a 0%, #b85a4a 100%);
+        color: #1a1410;
+        border-color: #d97a6a;
+
+        &:hover {
+          background: linear-gradient(135deg, #e88a7a 0%, #d97a6a 100%);
+          box-shadow: 0 0 20px rgba(200, 80, 60, 0.3);
+        }
+      }
+    }
+  }
+
+  & > .edit-mode {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4vw;
+
+    input {
+      padding: 0.3vw 0.5vw;
+      border: 1px solid #5c4334;
+      border-radius: 0.25vw;
+      font-size: 0.85vw;
+      background: #4d372b;
+      color: #f5e6d3;
+
+      &:focus {
+        outline: 2px solid #c9a050;
+        border-color: transparent;
+      }
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.5vw;
+      justify-content: flex-end;
+
+      button {
+        padding: 0.3vw 1vw;
+        border: 1px solid #5c4334;
+        border-radius: 0.25vw;
+        cursor: pointer;
+        font-size: 0.85vw;
+        font-weight: 600;
+        transition: all 0.3s;
+        background: #4d372b;
+        color: #f5e6d3;
+
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+
+      .save {
+        background: linear-gradient(135deg, #5a8f5a 0%, #3d6b3d 100%);
+        border-color: #5a8f5a;
+
+        &:hover {
+          background: linear-gradient(135deg, #6aaf6a 0%, #5a8f5a 100%);
+          box-shadow: 0 0 20px rgba(80, 180, 80, 0.3);
+        }
+      }
+
+      .cancel {
+        background: linear-gradient(135deg, #7a3a30 0%, #5a2a20 100%);
+        border-color: #7a3a30;
+
+        &:hover {
+          background: linear-gradient(135deg, #8a4a3a 0%, #6a3020 100%);
+          box-shadow: 0 0 20px rgba(200, 80, 60, 0.3);
+        }
+      }
+    }
+  }
+}

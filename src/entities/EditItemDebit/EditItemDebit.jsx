@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { updateDebit, deleteDebit } from '../../features/localStorage/debitStorage.jsx';
 import { formatDate } from '../../utils/dateUtils.jsx';
 
+import "../shared/EditItemDebitStyles.scss"
+
 const EditItemDebit = ({ item, onUpdate }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [formData, setFormData] = useState({ ...item });
@@ -40,7 +42,7 @@ const EditItemDebit = ({ item, onUpdate }) => {
     };
 
     return (
-        <div className="edit-item">
+        <div className="edit-item-debit">
             {!isEditing ? (
                 <div className="view-mode">
                     <div className="info">
@@ -51,18 +53,18 @@ const EditItemDebit = ({ item, onUpdate }) => {
                             <div><strong>Дата взятия:</strong> {formatDate(item.startDate)}</div>
                             <div><strong>Дата погашения:</strong> {formatDate(item.endDate) || 'Не указана'}</div>
                             {interestFreeEnd && (
-                                <div style={{ color: '#d32f2f' }}>
-                                    <strong>Конец беспроцентного периода:</strong> {formatDate(interestFreeEnd)}
+                                <div className="interest-free-end">
+                                    🔥 Конец беспроцентного периода: {formatDate(interestFreeEnd)}
                                 </div>
                             )}
                         </div>
                     </div>
                     <div className="actions">
                         <button className="edit_btn" onClick={() => setIsEditing(true)}>
-                            Редактировать
+                            ✏️ Редактировать
                         </button>
                         <button className="delete_btn" onClick={handleDelete}>
-                            Удалить
+                            🗑️ Удалить
                         </button>
                     </div>
                 </div>

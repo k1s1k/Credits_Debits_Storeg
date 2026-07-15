@@ -1,59 +1,130 @@
-.list{
+// Основные цвета тёмно-коричневой темы
+:root {
+  --bg-primary: #1a1410;
+  --bg-secondary: #2c1f18;
+  --bg-card: #3d2b21;
+  --bg-input: #4d372b;
+  --bg-hover: #5c4334;
+
+  --text-primary: #f5e6d3;
+  --text-secondary: #d4b8a0;
+  --text-muted: #a0806a;
+
+  --border-color: #5c4334;
+  --border-light: #4d372b;
+
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --shadow-light: rgba(0, 0, 0, 0.3);
+
+  --gradient-start: #3d2b21;
+  --gradient-end: #1a1410;
+
+  --accent-gold: #c9a050;
+  --accent-gold-hover: #dbb86a;
+  --accent-red: #b85a4a;
+  --accent-green: #5a8f5a;
+  --accent-blue: #4a7a8f;
+}
+
+* {
+  scrollbar-color: #5c4334 #2c1f18;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #2c1f18;
+  border-radius: 2px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #5c4334;
+  border-radius: 2px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #7a5a44;
+}
+
+body {
+  background: #1a1410;
+  color: #f5e6d3;
+}
+
+.list {
   display: flex;
   flex-direction: column;
-  gap: 1vw;
-  background-color: #ffffff;
+  gap: 0.8vw;
+  background: #2c1f18;
   border-radius: 0.5vw;
   width: 100%;
   height: 85vh;
   padding: 1vw;
-  overflow-scrolling: auto;
+  overflow-y: auto;
+  border: 1px solid #3d2b21;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 
-
-  & > .title{
+  & > .title {
     text-align: center;
     font-size: 1.15vw;
     font-weight: 500;
+    color: #d4b8a0;
+    padding-bottom: 0.3vw;
+    border-bottom: 2px solid #3d2b21;
   }
 
-  & > .items-list{
+  & > .items-list {
     display: flex;
     flex-direction: column;
-    gap: 0.25vw;
+    gap: 0.5vw;
   }
 }
 
-.total-stats{
+.total-stats {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 0.25vw;
-  background-color: #f0eef3;
-  padding: 0.5vw;
+  background: #3d2b21;
+  padding: 0.5vw 0.8vw;
   border-radius: 0.5vw;
-  border: 1px solid rgba(114, 97, 143, 0.33);
+  border: 1px solid #5c4334;
+  flex-wrap: wrap;
 
-  & > .stat-item{
+  & > .stat-item {
     display: flex;
     flex-direction: row;
     gap: 0.5vw;
+    font-size: 0.85vw;
 
-    & > .stat-label{
-
-
+    & > .stat-label {
+      color: #a0806a;
     }
 
-    & > .stat-value{
+    & > .stat-value {
       font-weight: 600;
+      color: #f5e6d3;
     }
 
-
-    & > .debt{
-      color: #FF7272;
+    & > .debt {
+      color: #d97a6a;
     }
 
-    & > .profit{
-      color: #46C73F;
+    & > .profit {
+      color: #6aaf6a;
     }
   }
+}
+
+.empty-message {
+  text-align: center;
+  padding: 2vw;
+  color: #a0806a;
+  font-style: italic;
+  background: #2c1f18;
+  border-radius: 0.5vw;
+  border: 1px dashed #4d372b;
 }
