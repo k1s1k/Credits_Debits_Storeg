@@ -26,7 +26,7 @@ const CreditList = ({ data_list }) => {
 
             <AddItemCredit data_list={data_list} />
 
-            <div className="total-stats credit_total">
+            <div className="total-stats">
                 <div className="stat-item">
                     <span className="stat-label">Количество вкладов:</span>
                     <span className="stat-value">{items.length}</span>

@@ -16,6 +16,30 @@
   margin-top: 1vw;
   font-weight: 500;
   padding: 1vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2vw;
+  align-items: center;
+}
+.main_page > .header > button {
+  width: 30%;
+  border: none;
+  cursor: pointer;
+  padding: 0.35vw;
+  border-radius: 0.25vw;
+  transition: transform 0.25s;
+  font-weight: 600;
+  height: fit-content;
+}
+.main_page > .header > button:hover {
+  transform: scale(1.05);
+}
+.main_page > .header > .export-btn {
+  background-color: #f50b90;
+}
+.main_page > .header > .import-btn {
+  background-color: #46C73F;
 }
 .main_page > .body {
   display: flex;

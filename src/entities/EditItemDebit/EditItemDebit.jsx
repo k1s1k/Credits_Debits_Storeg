@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { updateDebit, deleteDebit } from '../../features/localStorage/debitStorage.jsx';
+import { formatDate } from '../../utils/dateUtils.jsx';
 
 const EditItemDebit = ({ item, onUpdate }) => {
     const [isEditing, setIsEditing] = useState(false);
@@ -47,21 +48,21 @@ const EditItemDebit = ({ item, onUpdate }) => {
                             <div><strong>Банк:</strong> {item.bankName}</div>
                             <div><strong>Сумма:</strong> {item.money} ₽</div>
                             <div><strong>Беспроцентный период:</strong> {item.interestFreeDays} дней</div>
-                            <div><strong>Дата взятия:</strong> {item.startDate}</div>
-                            <div><strong>Дата погашения:</strong> {item.endDate || 'Не указана'}</div>
+                            <div><strong>Дата взятия:</strong> {formatDate(item.startDate)}</div>
+                            <div><strong>Дата погашения:</strong> {formatDate(item.endDate) || 'Не указана'}</div>
                             {interestFreeEnd && (
                                 <div style={{ color: '#d32f2f' }}>
-                                    <strong>Конец беспроцентного периода:</strong> {interestFreeEnd}
+                                    <strong>Конец беспроцентного периода:</strong> {formatDate(interestFreeEnd)}
                                 </div>
                             )}
                         </div>
                     </div>
                     <div className="actions">
                         <button className="edit_btn" onClick={() => setIsEditing(true)}>
-                            ✏️ Редактировать
+                            Редактировать
                         </button>
                         <button className="delete_btn" onClick={handleDelete}>
-                            🗑️ Удалить
+                            Удалить
                         </button>
                     </div>
                 </div>

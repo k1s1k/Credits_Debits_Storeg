@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { updateCredit, deleteCredit } from '../../features/localStorage/creditStorage.jsx';
+import { formatDate } from '../../utils/dateUtils.jsx';
+
+import "./EditItemCreditStyles.scss"
 
 const EditItemCredit = ({ item, onUpdate }) => {
     const [isEditing, setIsEditing] = useState(false);
@@ -85,30 +88,32 @@ const EditItemCredit = ({ item, onUpdate }) => {
                             <div><strong>Банк:</strong> {item.bankName}</div>
                             <div><strong>Сумма:</strong> {item.money} ₽</div>
                             <div><strong>Ставка:</strong> {item.annualRate}%</div>
-                            <div><strong>Дата начала:</strong> {item.startDate}</div>
+                            <div><strong>Дата начала:</strong> {formatDate(item.startDate)}</div>
                             <div><strong>Сложный процент:</strong> {item.isCompound ? 'Да' : 'Нет'}</div>
                         </div>
+
                         <div className="info_money">
                             <div style={{ color: '#2e7d32', fontWeight: 'bold' }}>
-                                💰 Заработано сегодня: {currentProfit.toFixed(2)} ₽
+                                Заработано сегодня: {currentProfit.toFixed(2)} ₽
                             </div>
                             <div style={{ color: '#1565c0', fontWeight: 'bold' }}>
-                                📈 Заработано за месяц: {monthProfit.toFixed(2)} ₽
+                                Заработано за месяц: {monthProfit.toFixed(2)} ₽
                             </div>
                             <div style={{ color: '#1a237e', fontWeight: 'bold' }}>
-                                📊 Сумма на конец месяца: {totalMonthEnd.toFixed(2)} ₽
+                                Сумма на конец месяца: {totalMonthEnd.toFixed(2)} ₽
                             </div>
                             <div style={{ color: '#4a148c', fontWeight: 'bold' }}>
-                                📊 Итого с процентами (на сегодня): {(item.money + currentProfit).toFixed(2)} ₽
+                                Итого с процентами (на сегодня): {(item.money + currentProfit).toFixed(2)} ₽
                             </div>
                         </div>
                     </div>
+
                     <div className="actions">
                         <button className="edit_btn" onClick={() => setIsEditing(true)}>
-                            ✏️ Редактировать
+                            Редактировать
                         </button>
                         <button className="delete_btn" onClick={handleDelete}>
-                            🗑️ Удалить
+                            Удалить
                         </button>
                     </div>
                 </div>
