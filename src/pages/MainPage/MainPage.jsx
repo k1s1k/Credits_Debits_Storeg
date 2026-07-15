@@ -1,36 +1,20 @@
 import React from 'react';
-
-import "./MainPage.scss"
-
-import CreditList from "../../wigets/CreditList/CreditList.jsx";
-import DebitList from "../../wigets/DebitList/DebitList.jsx";
-
-import BunckList from "../../../public/data/BacnkList.json"
+import CreditList from '../../wigets/CreditList/CreditList.jsx';
+import DebitList from '../../wigets/DebitList/DebitList.jsx';
+import BankList from '../../../public/data/BacnkList.json';
+import './MainPage.scss';
 
 const MainPage = () => {
     return (
-        <div className={'main_page'}>
-
-            <div className={"header"}>
+        <div className="main_page">
+            <div className="header">
                 Система учёта финансов
             </div>
 
-
-            <div className={"body"}>
-
-                <DebitList
-                    id="debitList"
-                    item={ BunckList }
-                />
-
-                <CreditList
-                    id="creditList"
-                    item={ BunckList }
-                />
-
-
+            <div className="body">
+                <DebitList data_list={BankList} />
+                <CreditList data_list={BankList} />
             </div>
-
         </div>
     );
 };
