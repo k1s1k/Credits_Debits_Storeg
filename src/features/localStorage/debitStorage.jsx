@@ -12,7 +12,10 @@ export const addDebit = (newDebit) => {
         {
             ...newDebit,
             id: Date.now(),
-            createdAt: new Date().toISOString()
+            createdAt: new Date().toISOString(),
+            money: parseFloat(newDebit.money) || 0,
+            interestFreeDays: parseInt(newDebit.interestFreeDays) || 0,
+            bankId: parseInt(newDebit.bankId) || 0
         }
     ];
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));

@@ -41,20 +41,20 @@ const EditItemCredit = ({ item, onUpdate }) => {
     };
 
     const daysPassed = calculateDays(item.startDate);
+
+    // ✅ ИСПРАВЛЕНО: приводим к числам
     const currentProfit = calculateProfit(
-        item.money,
-        item.annualRate,
+        parseFloat(item.money) || 0,
+        parseFloat(item.annualRate) || 0,
         daysPassed,
         item.isCompound
     );
     const monthProfit = calculateMonthProfit(
-        item.money,
-        item.annualRate,
+        parseFloat(item.money) || 0,
+        parseFloat(item.annualRate) || 0,
         item.isCompound
     );
-
-    // Сумма на конец месяца = вклад + проценты за месяц
-    const totalMonthEnd = item.money + monthProfit;
+    const totalMonthEnd = (parseFloat(item.money) || 0) + monthProfit;
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -103,7 +103,7 @@ const EditItemCredit = ({ item, onUpdate }) => {
                                 📊 Сумма на конец месяца: {totalMonthEnd.toFixed(2)} ₽
                             </div>
                             <div className="profit-final">
-                                🏦 Итого с процентами (на сегодня): {(item.money + currentProfit).toFixed(2)} ₽
+                                🏦 Итого с процентами (на сегодня): {(parseFloat(item.money) || 0 + currentProfit).toFixed(2)} ₽
                             </div>
                         </div>
                     </div>

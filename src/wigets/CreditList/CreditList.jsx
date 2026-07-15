@@ -18,7 +18,7 @@ const CreditList = ({ data_list }) => {
         return () => window.removeEventListener('storageUpdate', handleUpdate);
     }, []);
 
-    const totalMoney = items.reduce((sum, current) => sum + (current.money || 0), 0);
+    const totalMoney = items.reduce((sum, current) => sum + (parseFloat(current.money) || 0), 0);
 
     return (
         <div className="list">
